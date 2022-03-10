@@ -37,12 +37,42 @@ test('multiplyBySevenBasic', (expect) => {
     expect.equal(actual, expected, 'input number multiplied by seven');
 });
 
+test('multiplyBySevenNegative', (expect) => {
+    const expected = -56;
+
+    const actual = multiplyBySeven(-8);
+
+    expect.equal(actual, expected, 'input number multiplied by seven, but the input is negative this time');
+});
+
+test('multiplyBySevenWrongType', (expect) => {
+    const actual = multiplyBySeven('eight');
+
+    expect.throws(actual, 'throws an error as input is not a number type');
+});
+
 test('multiplyByTwelveHalveBasic', (expect) => {
     const expected = 24;
 
     const actual = multiplyBy12ThenHalve(4);
 
     expect.equal(actual, expected, 'input multiplied by twelve then halved');
+});
+
+test('multiplyByTwelveHalveNull', (expect) => {
+    const expected = 0;
+
+    const actual = multiplyBy12ThenHalve(null);
+
+    expect.equal(actual, expected, 'returns 0 as null is considered to be 0');
+});
+
+test('multiplyByTwelveHalveDouble', (expect) => {
+    const expected = 9;
+
+    const actual = multiplyBy12ThenHalve(1.5);
+
+    expect.equal(actual, expected, 'double input is multiplied by twelve then halved');
 });
 
 test('divideThenMultiplyBasic', (expect) => {
@@ -53,13 +83,25 @@ test('divideThenMultiplyBasic', (expect) => {
     expect.equal(actual, expected, 'first input divided by second and multiplied by third');
 });
 
-/*test('divideThenMultiplyTooFewArguments', (expect) => {
-    const expected = '';
+test('divideThenMultiplyByZero', (expect) => {
+    const expected = Infinity;
 
+    const actual = divideThenMultiply(6, 0, 4);
+
+    expect.equal(actual, expected, 'Infinity due to dividing by zero');
+});
+
+test('divideThenMultiplyTooFewArguments', (expect) => {
     const actual = divideThenMultiply(4, 2);
 
-    expect.equal(actual, expected);
-});*/
+    expect.throws(actual, 'throws an error as there are not three arguments passed');
+});
+
+test('divideThenMultiplyWrongType', (expect) => {
+    const actual = divideThenMultiply('a', 'b', 'c');
+
+    expect.throws(actual, 'throws an error due to the wrong type being passed');
+});
 
 test('returnAsAnArrayBasic', (expect) => {
     const expected = [8, 4, 5];
