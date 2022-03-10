@@ -112,7 +112,7 @@ Output:
 */
 
 export function makeLuckyGreeting(firstNumber, secondNumber) {
-    return ('Hello! Your lucky number for the day is ' + (firstNumber, secondNumber) + '.');
+    return ('Hello! Your lucky number for the day is ' + (firstNumber + secondNumber) + '.');
 }
 
 // This function should take an array and return the second item in the array
@@ -146,7 +146,7 @@ Output:
 */
 
 export function getLastItem(array) {
-    return [array.length()];
+    return array[array.length - 1];
 }
 
 // This function should return a random number between 0 and 5. 
