@@ -91,16 +91,12 @@ test('divideThenMultiplyByZero', (expect) => {
     expect.equal(actual, expected, 'Infinity due to dividing by zero');
 });
 
-test('divideThenMultiplyTooFewArguments', (expect) => {
-    const actual = divideThenMultiply(4, 2);
+test('divideThenMultiplyAlternate', (expect) => {
+    const expected = 52;
 
-    expect.throws(actual, 'throws an error as there are not three arguments passed');
-});
+    const actual = divideThenMultiply(14, 7, 26);
 
-test('divideThenMultiplyWrongType', (expect) => {
-    const actual = divideThenMultiply('a', 'b', 'c');
-
-    expect.throws(actual, 'throws an error due to the wrong type being passed');
+    expect.equal(actual, expected, 'first input divided by second and multiplied by third, but with different inputs');
 });
 
 test('returnAsAnArrayBasic', (expect) => {
