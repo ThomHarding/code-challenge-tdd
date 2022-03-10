@@ -45,10 +45,12 @@ test('multiplyBySevenNegative', (expect) => {
     expect.equal(actual, expected, 'input number multiplied by seven, but the input is negative this time');
 });
 
-test('multiplyBySevenWrongType', (expect) => {
-    const actual = multiplyBySeven('eight');
+test('multiplyBySevenZero', (expect) => {
+    const expected = 0;
 
-    expect.throws(actual, 'throws an error as input is not a number type');
+    const actual = multiplyBySeven(0);
+
+    expect.equal(actual, expected, 'zero as anything times zero is zero');
 });
 
 test('multiplyByTwelveHalveBasic', (expect) => {
